@@ -1,0 +1,33 @@
+{
+  "name": "isa",
+  "version": "1.0.0",
+  "description": "Very minimal collection is isA functions. isObject, isArray, isDate...",
+  "homepage": "https://github.com/imrefazekas/isa",
+  "keywords": [
+    "validation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/imrefazekas/isa.git"
+  },
+  "bugs": {
+    "url": "http://github.com/imrefazekas/isa/issues"
+  },
+  "author": {
+    "name": "Imre Fazekas",
+    "email": "mail@imrefazekas.me"
+  },
+  "license": "MIT",
+  "main": "IsA.js",
+  "scripts": {},
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-jshint": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-rename": "latest",
+    "gulp-uglify": "latest"
+  },
+  "_id": "isa@1.0.0",
+  "dependencies": {
+  }
+}

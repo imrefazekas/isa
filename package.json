@@ -1,5 +1,5 @@
 {
-  "name": "isa",
+  "name": "isa.js",
   "version": "1.0.0",
   "description": "Very minimal collection is isA functions. isObject, isArray, isDate...",
   "homepage": "https://github.com/imrefazekas/isa",
@@ -27,7 +27,7 @@
     "gulp-rename": "latest",
     "gulp-uglify": "latest"
   },
-  "_id": "isa@1.0.0",
+  "_id": "isa.js@1.0.0",
   "dependencies": {
   }
 }

@@ -67,4 +67,11 @@ module.exports = {
 	},
 	isRegExp: function(value) {
 		return this.isObject(value) && objToString.call(value) == regexpTag;
-	}};
+	},
+	isBuffer: function(obj) {
+		return Buffer.isBuffer(obj);
+	},
+	isReadableStream: function (obj) {
+		return obj instanceof ReadableStream;
+	}
+};

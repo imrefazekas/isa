@@ -19,7 +19,7 @@ Command line:
 
 In JS code:
 
-	var _ = require('./isa');
+	var _ = require('isa.js');
 	...
 	_.isFunction( function(){} );
 

@@ -1,17 +1,17 @@
-var gulp = global.gulp = require('gulp'),
-	plugins = global.plugins = require("gulp-load-plugins")( { scope: ['devDependencies'] } );;
+'use strict'
 
-gulp.task( 'jshint', function(callback) {
-	return gulp.src( 'IsA.js' )
-		.pipe( global.plugins.jshint() )
-		.pipe( global.plugins.jshint.reporter('default' ));
-} );
+let gulp = global.gulp = require('gulp'),
+	plugins = require('gulp-load-plugins')( { scope: ['devDependencies'] } )
 
-gulp.task( 'uglify', function(callback) {
-	return gulp.src( 'IsA.js' )
-		.pipe( global.plugins.rename( 'IsA.min.js') )
-		.pipe( global.plugins.uglify( {outSourceMap: true} ) )
-		.pipe( gulp.dest('./') );
-} );
+gulp.task( 'lint', function (callback) {
+	return gulp.src( '*.js' )
+		.pipe( plugins.eslint() )
+        .pipe( plugins.eslint.format() )
+        .pipe( plugins.eslint.failAfterError() )
+} )
 
-gulp.task( 'default', [ 'jshint', 'uglify' ] );
+gulp.task( 'mocha', function (callback) {
+	return gulp.src( './test/*.mocha.js' ).pipe( plugins.mocha({reporter: 'nyan'}) )
+} )
+
+gulp.task( 'default', [ 'lint', 'mocha' ] )

@@ -1,6 +1,6 @@
 {
   "name": "isa.js",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Very minimal collection is isA functions. isObject, isArray, isDate...",
   "homepage": "https://github.com/imrefazekas/isa",
   "keywords": [
@@ -31,6 +31,10 @@
   },
   "dependencies": {
   },
+  "browser": {
+	   "fs": false,
+	   "child_process": false
+   },
   "engines": {
     "node": ">= 4.0.0"
   }

@@ -1,6 +1,6 @@
 'use strict'
 
-let boolTag = '[object Boolean]',
+var boolTag = '[object Boolean]',
 	dateTag = '[object Date]',
 	errorTag = '[object Error]',
 	funcTag = '[object Function]',
@@ -9,11 +9,11 @@ let boolTag = '[object Boolean]',
 	regexpTag = '[object RegExp]',
 	stringTag = '[object String]'
 
-let objectProto = Object.prototype
+var objectProto = Object.prototype
 
-let objToString = objectProto.toString
-let fnToString = Function.prototype.toString
-let objCtorString = fnToString.call(Object)
+var objToString = objectProto.toString
+var fnToString = Function.prototype.toString
+var objCtorString = fnToString.call(Object)
 
 module.exports = {
 	getPrototypeOf: Object.getPrototypeOf,

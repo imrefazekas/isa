@@ -30,5 +30,8 @@
       "gulp-uglify": "^1.5.2"
   },
   "dependencies": {
+  },
+  "engines": {
+    "node": ">= 4.0.0"
   }
 }

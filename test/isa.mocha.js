@@ -31,6 +31,11 @@ describe('IsA.js', function () {
 			expect( _.isString( s ) ).to.be.true
 			done()
 		})
+		it('Plan', function (done) {
+			let p = { data: 'hello' }
+			expect( _.isPlainObject( p ) ).to.be.true
+			done()
+		})
 	})
 
 	after(function (done) {

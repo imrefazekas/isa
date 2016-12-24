@@ -16,8 +16,8 @@ var objToString = objectProto.toString
 var fnToString = Function.prototype.toString
 var objCtorString = fnToString.call(Object)
 
-let STRIP_COMMENTS = /((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg
-let ARGUMENT_NAMES = /([^\s,]+)/g
+var STRIP_COMMENTS = /((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg
+var ARGUMENT_NAMES = /([^\s,]+)/g
 
 module.exports = {
 	getPrototypeOf: Object.getPrototypeOf,

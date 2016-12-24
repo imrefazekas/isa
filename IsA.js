@@ -16,6 +16,9 @@ var objToString = objectProto.toString
 var fnToString = Function.prototype.toString
 var objCtorString = fnToString.call(Object)
 
+let STRIP_COMMENTS = /((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg
+let ARGUMENT_NAMES = /([^\s,]+)/g
+
 module.exports = {
 	getPrototypeOf: Object.getPrototypeOf,
 	isHostObject: function (value) {
@@ -70,5 +73,12 @@ module.exports = {
 	},
 	isRegExp: function (value) {
 		return this.isObject(value) && objToString.call(value) === regexpTag
+	},
+	parameterNames ( func ) {
+		var fnStr = func.toString().replace(STRIP_COMMENTS, '')
+		var result = fnStr.slice(fnStr.indexOf('(') + 1, fnStr.indexOf(')')).match(ARGUMENT_NAMES)
+		if (result === null)
+			result = []
+		return result
 	}
 }

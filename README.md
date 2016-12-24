@@ -25,4 +25,4 @@ In JS code:
 
 Services:
 
-	isArray, isObject, isError, isNumber, isDate, isFunction, isBoolean, isString, isRegExp
+	isArray, isObject, isError, isNumber, isDate, isFunction, isAsyncFunction, isBoolean, isString, isRegExp

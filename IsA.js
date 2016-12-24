@@ -4,6 +4,7 @@ var boolTag = '[object Boolean]',
 	dateTag = '[object Date]',
 	errorTag = '[object Error]',
 	funcTag = '[object Function]',
+	afuncTag = '[object AsyncFunction]',
 	numberTag = '[object Number]',
 	objectTag = '[object Object]',
 	regexpTag = '[object RegExp]',
@@ -57,6 +58,9 @@ module.exports = {
 	},
 	isFunction: function (value) {
 		return this.isObject(value) && objToString.call(value) === funcTag
+	},
+	isAsyncFunction: function (value) {
+		return this.isObject(value) && objToString.call(value) === afuncTag
 	},
 	isBoolean: function (value) {
 		return value === true || value === false || (this.isObjectLike(value) && objToString.call(value) === boolTag)

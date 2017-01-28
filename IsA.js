@@ -74,7 +74,7 @@ module.exports = {
 	isRegExp: function (value) {
 		return this.isObject(value) && objToString.call(value) === regexpTag
 	},
-	parameterNames ( func ) {
+	parameterNames: function ( func ) {
 		var fnStr = func.toString().replace(STRIP_COMMENTS, '')
 		var result = fnStr.slice(fnStr.indexOf('(') + 1, fnStr.indexOf(')')).match(ARGUMENT_NAMES)
 		if (result === null)

@@ -1,6 +1,6 @@
 {
   "name": "isa.js",
-  "version": "1.9.1",
+  "version": "2.0.0",
   "description": "Very minimal collection is isA functions. isObject, isArray, isDate...",
   "homepage": "https://github.com/imrefazekas/isa",
   "keywords": [
@@ -21,7 +21,7 @@
   "main": "IsA.js",
   "scripts": {},
   "devDependencies": {
-    "chai": "^4.1.0",
+    "chai": "^4.1.1",
     "gulp": "^3.9.1",
     "gulp-eslint": "^4.0.0",
     "gulp-load-plugins": "^1.5.0",

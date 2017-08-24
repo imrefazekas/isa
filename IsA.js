@@ -60,6 +60,9 @@ module.exports = {
 		return this.isObjectLike(value) && objToString.call(value) === dateTag
 	},
 	isFunction: function (value) {
+		return this.isObject(value) && (objToString.call(value) === funcTag || objToString.call(value) === afuncTag)
+	},
+	isSyncFunction: function (value) {
 		return this.isObject(value) && objToString.call(value) === funcTag
 	},
 	isAsyncFunction: function (value) {

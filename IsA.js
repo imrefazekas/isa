@@ -19,6 +19,8 @@ var objCtorString = fnToString.call(Object)
 var STRIP_COMMENTS = /((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg
 var ARGUMENT_NAMES = /([^\s,]+)/g
 
+var NAME_PATTERN = /([\\.A-Za-z]+)/g
+
 module.exports = {
 	getPrototypeOf: Object.getPrototypeOf,
 	isHostObject: function (value) {
@@ -82,6 +84,13 @@ module.exports = {
 		var result = fnStr.slice(fnStr.indexOf('(') + 1, fnStr.indexOf(')')).match(ARGUMENT_NAMES)
 		if (result === null)
 			result = []
+		result = result.map( ( p ) => {
+			var index = p.indexOf('=')
+			return (index === -1) ? p : p.substring( 0, index )
+		} )
+		result = result.filter( ( p ) => {
+			return p.length > 0 && p.match( NAME_PATTERN )
+		} )
 		return result
 	}
 }

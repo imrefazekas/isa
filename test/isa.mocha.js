@@ -36,6 +36,18 @@ describe('IsA.js', function () {
 			expect( _.isPlainObject( p ) ).to.be.true
 			done()
 		})
+		it('Path check', function (done) {
+			let p = { data: 'hello', content: { name: 'Peter' } }
+			expect( _.isValidPath( p, 'data' ) ).to.be.true
+			expect( _.isValidPath( p, 'name' ) ).to.be.false
+			expect( _.isValidPath( p, '' ) ).to.be.true
+			expect( _.isValidPath( p, null ) ).to.be.true
+			expect( _.isValidPath( null, '' ) ).to.be.true
+			expect( _.isValidPath( null, 'name' ) ).to.be.false
+			expect( _.isValidPath( p, 'content' ) ).to.be.true
+			expect( _.isValidPath( p, 'content.name' ) ).to.be.true
+			done()
+		})
 	})
 
 	after(function (done) {

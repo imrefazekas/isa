@@ -79,6 +79,18 @@ module.exports = {
 	isRegExp: function (value) {
 		return this.isObject(value) && objToString.call(value) === regexpTag
 	},
+	isValidPath: function (object, path) {
+		if ( !path ) return true
+
+		let oPath = path.split('.')
+
+		if ( !object && oPath.length === 0 ) return true
+		for ( let key of oPath ) {
+			if ( !object || !object[key] ) return false
+			object = object[ key ]
+		}
+		return true
+	},
 	parameterNames: function ( func ) {
 		var fnStr = func.toString().replace(STRIP_COMMENTS, '')
 		var result = fnStr.slice(fnStr.indexOf('(') + 1, fnStr.indexOf(')')).match(ARGUMENT_NAMES)

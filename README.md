@@ -15,7 +15,7 @@ The size of this package is: __1700 bytes__.
 
 Command line:
 
-	npm install isa --save
+	npm install isa.js --save
 
 In JS code:
 

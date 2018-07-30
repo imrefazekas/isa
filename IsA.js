@@ -1,5 +1,3 @@
-'use strict'
-
 var boolTag = '[object Boolean]',
 	dateTag = '[object Date]',
 	errorTag = '[object Error]',

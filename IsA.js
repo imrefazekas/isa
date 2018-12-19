@@ -102,5 +102,19 @@ module.exports = {
 			return p.length > 0 && p.match( NAME_PATTERN )
 		} )
 		return result
+	},
+	pick: function (object, predicate) {
+		if (!object)
+			return {}
+
+		if (!predicate)
+			predicate = Object.keys( object )
+		else if (!Array.isArray(predicate))
+			predicate = Object.keys( predicate )
+
+		let res = {}
+		for (let key of predicate)
+			res[ key ] = object[key]
+		return res
 	}
 }

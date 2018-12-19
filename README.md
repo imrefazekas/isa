@@ -26,3 +26,7 @@ In JS code:
 Services:
 
 	isArray, isObject, isError, isNumber, isDate, isFunction, isAsyncFunction, isBoolean, isString, isRegExp
+
+Extras:
+
+	pick, walk, isValidPath

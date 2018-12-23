@@ -106,7 +106,7 @@ module.exports = {
 		} )
 		return result
 	},
-	pick: function (object, predicate) {
+	pick: function (object, predicate, ignore = [] ) {
 		if (!object)
 			return {}
 
@@ -115,9 +115,13 @@ module.exports = {
 		else if (!Array.isArray(predicate))
 			predicate = Object.keys( predicate )
 
+		if (!Array.isArray(ignore))
+			ignore = Object.keys( ignore )
+
 		let res = {}
 		for (let key of predicate)
-			res[ key ] = object[key]
+			if (!ignore.includes(key))
+				res[ key ] = object[key]
 		return res
 	}
 }

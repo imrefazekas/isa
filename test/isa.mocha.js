@@ -40,12 +40,19 @@ describe('IsA.js', function () {
 			let p = { data: 'hello', content: { name: 'Peter' } }
 			expect( _.isValidPath( p, 'data' ) ).to.be.true
 			expect( _.isValidPath( p, 'name' ) ).to.be.false
-			expect( _.isValidPath( p, '' ) ).to.be.true
-			expect( _.isValidPath( p, null ) ).to.be.true
-			expect( _.isValidPath( null, '' ) ).to.be.true
+			expect( _.isValidPath( p, '' ) ).to.be.false
+			expect( _.isValidPath( p, null ) ).to.be.false
+			expect( _.isValidPath( null, '' ) ).to.be.false
 			expect( _.isValidPath( null, 'name' ) ).to.be.false
 			expect( _.isValidPath( p, 'content' ) ).to.be.true
 			expect( _.isValidPath( p, 'content.name' ) ).to.be.true
+			done()
+		})
+		it('Pick', function (done) {
+			console.log( _.pick( { name: 'Hello' } ) )
+			console.log( _.pick( { name: 'Hello' }, { name: 'Hello' } ) )
+			console.log( _.pick( { name: 'Hello' }, [ 'name' ] ) )
+			console.log( _.pick( { name: 'Hello' }, [ 'name' ], [ 'name' ] ) )
 			done()
 		})
 	})

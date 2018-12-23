@@ -120,7 +120,7 @@ module.exports = {
 
 		let res = {}
 		for (let key of predicate)
-			if (!ignore.includes(key))
+			if (!ignore.includes(key) && object.hasOwnProperty(key) )
 				res[ key ] = object[key]
 		return res
 	}

@@ -115,7 +115,9 @@ module.exports = {
 		else if (!Array.isArray(predicate))
 			predicate = Object.keys( predicate )
 
-		if (!ignore || !Array.isArray(ignore))
+		if (!ignore)
+			ignore = []
+		else if (!Array.isArray(ignore))
 			ignore = Object.keys( ignore )
 
 		let res = target || {}

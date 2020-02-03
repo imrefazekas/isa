@@ -133,7 +133,7 @@ module.exports = {
 				res.push( obj[m] )
 		return res
 	},
-	functionsNames (obj) {
+	functionNames (obj) {
 		let res = []
 		for (let m of Object.getOwnPropertyNames( obj ) )
 			if ( obj[m] && this.isFunction( obj[m] ) )

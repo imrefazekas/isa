@@ -125,5 +125,19 @@ module.exports = {
 			if (!ignore.includes(key) && object.hasOwnProperty(key) )
 				res[ key ] = object[key]
 		return res
+	},
+	functionsOf (obj) {
+		let res = []
+		for (let m of Object.getOwnPropertyNames( obj ) )
+			if ( obj[m] && this.isFunction( obj[m] ) )
+				res.push( obj[m] )
+		return res
+	},
+	functionsNames (obj) {
+		let res = []
+		for (let m of Object.getOwnPropertyNames( obj ) )
+			if ( obj[m] && this.isFunction( obj[m] ) )
+				res.push( m )
+		return res
 	}
 }

@@ -19,7 +19,7 @@ var ARGUMENT_NAMES = /([^\s,]+)/g
 
 var NAME_PATTERN = /([\\.A-Za-z]+)/g
 
-module.exports = {
+let Services = {
 	getPrototypeOf: Object.getPrototypeOf,
 	isHostObject: function (value) {
 		var result = false
@@ -29,6 +29,15 @@ module.exports = {
 			} catch (e) {}
 		}
 		return result
+	},
+	isDefined (value) {
+		return value !== undefined && value !== null
+	},
+	isIterable (obj) {
+		if ( !Services.isDefined(obj) )
+			return false
+
+		return typeof obj[Symbol.iterator] === 'function'
 	},
 	isPlainObject: function (value) {
 		if (!this.isObjectLike(value) || objToString.call(value) !== objectTag || this.isHostObject(value)) {
@@ -90,7 +99,7 @@ module.exports = {
 		return object || defaultValue
 	},
 	isValidPath: function (object, path) {
-		return !!module.exports.walk(object, path, null)
+		return !!Services.walk(object, path, null)
 	},
 	parameterNames: function ( func ) {
 		var fnStr = func.toString().replace(STRIP_COMMENTS, '')
@@ -141,3 +150,5 @@ module.exports = {
 		return res
 	}
 }
+
+module.exports = Services

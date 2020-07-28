@@ -39,6 +39,9 @@ let Services = {
 
 		return typeof obj[Symbol.iterator] === 'function'
 	},
+	isPromise (p) {
+		return p && Object.prototype.toString.call(p) === '[object Promise]'
+	},
 	isPlainObject: function (value) {
 		if (!this.isObjectLike(value) || objToString.call(value) !== objectTag || this.isHostObject(value)) {
 			return false

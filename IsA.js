@@ -140,18 +140,23 @@ let Services = {
 	},
 	functionsOf (obj) {
 		let res = []
-		for (let m of Object.getOwnPropertyNames( obj ) )
+		if (!obj) return res
+
+		for (let m in obj)
 			if ( obj[m] && this.isFunction( obj[m] ) )
 				res.push( obj[m] )
 		return res
 	},
 	functionNames (obj) {
 		let res = []
-		for (let m of Object.getOwnPropertyNames( obj ) )
+		if (!obj) return res
+
+		for (let m in obj)
 			if ( obj[m] && this.isFunction( obj[m] ) )
 				res.push( m )
 		return res
 	}
+
 }
 
 module.exports = Services

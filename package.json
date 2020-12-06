@@ -1,6 +1,6 @@
 {
   "name": "isa.js",
-  "version": "2.2.15",
+  "version": "2.2.16",
   "description": "Very minimal collection is isA functions. isObject, isArray, isDate...",
   "homepage": "https://github.com/imrefazekas/isa",
   "keywords": [

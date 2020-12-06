@@ -138,21 +138,21 @@ let Services = {
 				res[ key ] = object[key]
 		return res
 	},
-	functionsOf (obj) {
+	functionsOf (obj, asyncOnly = false) {
 		let res = []
 		if (!obj) return res
 
 		for (let m in obj)
-			if ( obj[m] && this.isFunction( obj[m] ) )
+			if ( obj[m] && ( asyncOnly ? this.isAsyncFunction( obj[m] ) : this.isFunction( obj[m] ) ) )
 				res.push( obj[m] )
 		return res
 	},
-	functionNames (obj) {
+	functionNames (obj, asyncOnly = false) {
 		let res = []
 		if (!obj) return res
 
 		for (let m in obj)
-			if ( obj[m] && this.isFunction( obj[m] ) )
+			if ( obj[m] && (asyncOnly ? this.isAsyncFunction( obj[m] ) : this.isFunction( obj[m] ) ) )
 				res.push( m )
 		return res
 	}

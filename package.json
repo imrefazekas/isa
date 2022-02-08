@@ -22,7 +22,7 @@
   "types": "./index.d.ts",
   "scripts": {},
   "devDependencies": {
-    "chai": "^4.2.0"
+    "chai": "^4.3.6"
   },
   "dependencies": {},
   "browser": {

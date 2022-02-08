@@ -1,6 +1,6 @@
 {
   "name": "isa.js",
-  "version": "2.2.16",
+  "version": "2.2.17",
   "description": "Very minimal collection is isA functions. isObject, isArray, isDate...",
   "homepage": "https://github.com/imrefazekas/isa",
   "keywords": [
@@ -19,6 +19,7 @@
   },
   "license": "MIT",
   "main": "IsA.js",
+  "types": "./index.d.ts",
   "scripts": {},
   "devDependencies": {
     "chai": "^4.2.0"

@@ -1,35 +1,35 @@
 {
-  "name": "isa.js",
-  "version": "2.2.17",
-  "description": "Very minimal collection is isA functions. isObject, isArray, isDate...",
-  "homepage": "https://github.com/imrefazekas/isa",
-  "keywords": [
-    "validation"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/imrefazekas/isa.git"
-  },
-  "bugs": {
-    "url": "http://github.com/imrefazekas/isa/issues"
-  },
-  "author": {
-    "name": "Imre Fazekas",
-    "email": "mail@imrefazekas.me"
-  },
-  "license": "MIT",
-  "main": "IsA.js",
-  "types": "./index.d.ts",
-  "scripts": {},
-  "devDependencies": {
-    "chai": "^4.3.6"
-  },
-  "dependencies": {},
-  "browser": {
-    "fs": false,
-    "child_process": false
-  },
-  "engines": {
-    "node": ">= 4.0.0"
-  }
+	"name": "isa.js",
+	"version": "2.2.18",
+	"description": "Very minimal collection is isA functions. isObject, isArray, isDate...",
+	"homepage": "https://github.com/imrefazekas/isa",
+	"keywords": [
+		"validation"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/imrefazekas/isa.git"
+	},
+	"bugs": {
+		"url": "http://github.com/imrefazekas/isa/issues"
+	},
+	"author": {
+		"name": "Imre Fazekas",
+		"email": "mail@imrefazekas.me"
+	},
+	"license": "MIT",
+	"main": "IsA.js",
+	"types": "./index.d.ts",
+	"scripts": {},
+	"devDependencies": {
+		"chai": "^4.5.0"
+	},
+	"dependencies": {},
+	"browser": {
+		"fs": false,
+		"child_process": false
+	},
+	"engines": {
+		"node": ">= 4.0.0"
+	}
 }
